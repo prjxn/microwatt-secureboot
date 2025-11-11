@@ -1,6 +1,0 @@
-[submodule "microwatt"]
-	path = microwatt
-	url = https://github.com/antonblanchard/microwatt.git
-[submodule "sha256"]
-	path = sha256
-	url = https://github.com/dsaves/SHA-256.git
