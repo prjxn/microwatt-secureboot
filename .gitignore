@@ -1,4 +1,4 @@
-# Build outputs
+# Build products
 *.o
 *.elf
 *.bin
@@ -18,5 +18,18 @@ __pycache__/
 *.swo
 
 # OS metadata
+=======
+*.vcd
+work/
+ghdl-*
+__pycache__/
+sim.log
+
+# editor
+*.swp
+*.swo
+
+# OS
+>>>>>>> 88b54db (Initial commit)
 .DS_Store
 Thumbs.db
