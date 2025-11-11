@@ -1,7 +1,7 @@
 # Secure Boot with Microwatt
 
-A work-in-progress project demonstrating a **minimal secure boot flow** using the open-source **Microwatt POWER CPU** and **SHA-256 hardware**.  
-The system verifies firmware integrity before execution — outputting `BOOT OK` for a valid payload and `BOOT FAIL` for a tampered one.  
+A work-in-progress project demonstrating a **minimal secure boot flow** using the open-source **Microwatt POWER CPU** and **SHA-256 hardware**.
+The system verifies firmware integrity before execution — outputting `BOOT OK` for a valid payload and `BOOT FAIL` for a tampered one.
 This is **not a completed project**, but an prototype developed for the **Microwatt Momentum Hackathon (2025)**.
 
 ## Overview
