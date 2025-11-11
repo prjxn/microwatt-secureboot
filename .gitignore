@@ -1,0 +1,22 @@
+# Build outputs
+*.o
+*.elf
+*.bin
+*.hex
+
+# Simulation artifacts
+*.vcd
+work/
+ghdl-*
+sim.log
+
+# Python cache
+__pycache__/
+
+# Editor swap files
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db
