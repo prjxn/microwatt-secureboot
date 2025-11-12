@@ -5,7 +5,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Base build tools and dependencies
 # ------------------------------------------------------------------------------
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential git wget curl ca-certificates cmake make pkg-config \
+    build-essential git wget curl ca-certificates cmake make pkg-config\
+    bsdutils util-linux bsdmainutils\
     python3 python3-pip python3-venv python3-serial\
     gnat gcc g++ flex bison autoconf automake libtool \
     libgmp-dev libmpfr-dev libmpc-dev \

@@ -17,7 +17,7 @@ docker:
 	fi
 	
 hex:
-	docker exec -it $(DOCKER_NAME) bash -c "cd /workspace/firmware && make"
+	make -C /workspace/firmware
 
 sim:
 	chmod +x scripts/sim.sh

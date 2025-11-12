@@ -3,12 +3,12 @@ set -euo pipefail
 
 ROOTDIR=$(cd "$(dirname "$0")/.." && pwd)
 WORKDIR="$ROOTDIR/work"
-rm -f "$WORKDIR"/*.o "$WORKDIR"/*.cf "$ROOTDIR"/tb_top "$ROOTDIR"/top "$ROOTDIR"/sim.log "$ROOTDIR"/sim.vcd
+rm -f "$WORKDIR"/*.o "$WORKDIR"/*.cf "$ROOTDIR"/tb_top "$ROOTDIR"/topmodule "$ROOTDIR"/sim.log "$ROOTDIR"/sim.vcd
 mkdir -p "$WORKDIR"
 
 MICRO_DIR="$ROOTDIR/microwatt"
 SHA_DIR="$ROOTDIR/sha256"
-HW_DIR="$ROOTDIR/hw"
+HW_DIR="$ROOTDIR/top"
 
 ghdl -i --workdir="$WORKDIR" --std=08 "$MICRO_DIR/sim-unisim"/BSCANE2.vhdl
 ghdl -i --workdir="$WORKDIR" --std=08 "$MICRO_DIR/sim-unisim"/BUFG.vhdl
@@ -36,7 +36,7 @@ done
 ghdl -a --workdir="$WORKDIR" --std=08 "$SHA_DIR"/sha_256_pkg.vhdl
 ghdl -a --workdir="$WORKDIR" --std=08 "$SHA_DIR"/sha_256_core.vhdl
 
-for file in top.vhdl tb_top.vhdl sha256_wb_wrapper.vhdl; do
+for file in sha256_wb_wrapper.vhdl topmodule.vhdl tb_top.vhdl; do
     ghdl -a --workdir="$WORKDIR" --std=08 "$HW_DIR/$file"
 done
 
