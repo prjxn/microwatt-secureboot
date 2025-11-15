@@ -10,6 +10,12 @@ MICRO_DIR="$ROOTDIR/microwatt"
 SHA_DIR="$ROOTDIR/sha256"
 HW_DIR="$ROOTDIR/top"
 
+(
+    cd "$MICRO_DIR"
+    ./scripts/make_version.sh git.vhdl
+)
+
+
 ghdl -i --workdir="$WORKDIR" --std=08 "$MICRO_DIR/sim-unisim"/BSCANE2.vhdl
 ghdl -i --workdir="$WORKDIR" --std=08 "$MICRO_DIR/sim-unisim"/BUFG.vhdl
 ghdl -i --workdir="$WORKDIR" --std=08 "$MICRO_DIR/sim-unisim"/unisim_vcomponents.vhdl

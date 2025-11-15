@@ -19,13 +19,17 @@ docker:
 hex:
 	make -C /workspace/firmware
 
-sim:
+sim:    hex
 	chmod +x scripts/sim.sh
 	./scripts/sim.sh run
 
 clean:
-	rm -rf work ghdl-*.o sim.log sim.vcd
+	rm -rf work *.o sim.log sim.vcd tb_top
+	(cd microwatt && make -f Makefile _clean)
+	(cd firmware && make -f Makefile clean)
 
-delete:
+delete:	
+	docker start $(DOCKER_NAME)
+	docker exec $(DOCKER_NAME) /bin/bash -c "make clean"
 	docker rm -f $(DOCKER_NAME)
 
